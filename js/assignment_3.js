@@ -61,10 +61,12 @@ $.getJSON( "geojson/NYC_596acres.geojson", function( data ) {
     var dataset = data;
 
     var acresPointToLayer = function(feature, latlng){
-    	console.log(feature.properties.area);
+    	console.log(feature.properties);
 	    
 	    // symbolize points by lot area
-	    var value = feature.properties.area;
+        var area = (feature.properties.area * 10);
+	    var value = (feature.properties.area);
+
         var fillColor = null;
         if(value >= 0 && value <= 1.0){
             fillColor = "#ffc0cb";
@@ -76,7 +78,7 @@ $.getJSON( "geojson/NYC_596acres.geojson", function( data ) {
             fillColor = "#8b0000";
         }
 
-        var acresPointMarker = L.circle(latlng, 100, {
+        var acresPointMarker = L.circle(latlng, area, {
 	    	stroke: false,
 	    	fillColor: fillColor,
 	        fillOpacity: 1
@@ -117,5 +119,3 @@ function createLayerControls() {
     L.control.layers(baseMaps, overlayMaps).addTo(map);
 
 }
-
-
