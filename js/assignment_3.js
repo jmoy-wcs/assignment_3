@@ -1,5 +1,7 @@
 // Jesse Moy Interactive Web Mapping Assignment 3
 
+// gh- page update test
+
 // varible for our map container setting centroid [lat, lng] and zoom
 var map = L.map('map').setView([40.71,-73.93], 11);
 
