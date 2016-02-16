@@ -16,11 +16,6 @@ var neighborhoods_GEOJSON;
 var acres_GEOJSON;
 
 
-//add neighborhood data
-// let's add neighborhood data
-
-
-
 // add 596 acres data set lists vacent publicly owned land
 
 $.getJSON( "geojson/NYC_596acres.geojson", function( data ) {
@@ -71,6 +66,7 @@ $.getJSON( "geojson/NYC_596acres.geojson", function( data ) {
 });
 
 
+//add neighborhood data
 
 $.getJSON( "geojson/NYC_neighborhood_data.geojson", function( data ) {
     // ensure jQuery has pulled all data out of the geojson file
@@ -105,7 +101,7 @@ $.getJSON( "geojson/NYC_neighborhood_data.geojson", function( data ) {
         onEachFeature: neighborhoodClick
     }).addTo(map);
 
-    createLayerControls();
+    // createLayerControls();
 
 });
 
