@@ -2,7 +2,12 @@
 
 // gh-pages update test
 // gh-pages update test 2
+<<<<<<< HEAD
+=======
 // gh-pages update test 3
+>>>>>>> master
+// gh-pages update test 4
+
 
 // varible for our map container setting centroid [lat, lng] and zoom
 var map = L.map('map').setView([40.71,-73.93], 11);
