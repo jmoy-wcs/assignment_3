@@ -2,11 +2,8 @@
 
 // gh-pages update test
 // gh-pages update test 2
-<<<<<<< HEAD
-=======
 // gh-pages update test 3
->>>>>>> master
-// gh-pages upsdate test 4
+// gh-pages update test 4
 
 
 // varible for our map container setting centroid [lat, lng] and zoom
