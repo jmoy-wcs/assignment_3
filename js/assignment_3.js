@@ -5,6 +5,7 @@
 // gh-pages update test 3
 // gh-pages update test 4
 // gh-pages update test 5
+// gh-pages update test 6
 
 
 // varible for our map container setting centroid [lat, lng] and zoom
