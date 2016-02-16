@@ -18,40 +18,7 @@ var acres_GEOJSON;
 
 //add neighborhood data
 // let's add neighborhood data
-$.getJSON( "geojson/NYC_neighborhood_data.geojson", function( data ) {
-    // ensure jQuery has pulled all data out of the geojson file
-    var neighborhoods = data;
 
-    console.log(neighborhoods);
-
-    // neighborhood boundries 
-    var neighborhoodStyle = function (feature) {
-
-        var style = {
-            weight: 1,
-            opacity: 1,
-            color: 'grey',
-            fillOpacity: 0,
-            fillColor: null
-        };
-
-        return style;
-    }
-
-
-    var neighborhoodClick = function (feature, layer) {
-        var percent = feature.properties.PovertyPer * 100;
-        percent = percent.toFixed(0);
-        // let's bind some feature properties to a pop up
-        layer.bindPopup("<strong>Neighborhood:</strong> " + feature.properties.NYC_NEIG);
-    }
-
-    neighborhoodsGeoJSON = L.geoJson(neighborhoods, {
-        style: neighborhoodStyle,
-        onEachFeature: neighborhoodClick
-    }).addTo(map);
-
-});
 
 
 // add 596 acres data set lists vacent publicly owned land
@@ -98,10 +65,49 @@ $.getJSON( "geojson/NYC_596acres.geojson", function( data ) {
         onEachFeature: acresClick
     }).addTo(map);
 
+    //create layer controls
     createLayerControls(); 
 
 });
 
+
+
+$.getJSON( "geojson/NYC_neighborhood_data.geojson", function( data ) {
+    // ensure jQuery has pulled all data out of the geojson file
+    var neighborhoods = data;
+
+    console.log(neighborhoods);
+
+    // neighborhood boundries 
+    var neighborhoodStyle = function (feature) {
+
+        var style = {
+            weight: 1,
+            opacity: 1,
+            color: 'grey',
+            fillOpacity: 0,
+            fillColor: null
+        };
+
+        return style;
+    }
+
+
+    var neighborhoodClick = function (feature, layer) {
+        var percent = feature.properties.PovertyPer * 100;
+        percent = percent.toFixed(0);
+        // let's bind some feature properties to a pop up
+        layer.bindPopup("<strong>Neighborhood:</strong> " + feature.properties.NYC_NEIG);
+    }
+
+    neighborhoods_GEOJSON = L.geoJson(neighborhoods, {
+        style: neighborhoodStyle,
+        onEachFeature: neighborhoodClick
+    }).addTo(map);
+
+    createLayerControls();
+
+});
 
 function createLayerControls() {
 
