@@ -103,7 +103,7 @@ $.getJSON( "geojson/NYC_596acres.geojson", function( data ) {
 });
 
 
-function createLayerControls() {
+function createLayerControls(){
 
     // add in layer controls
     var baseMaps = {
